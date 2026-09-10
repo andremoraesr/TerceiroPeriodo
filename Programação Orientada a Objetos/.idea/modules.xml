@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Entrega2/Entrega2.iml" filepath="$PROJECT_DIR$/Entrega2/Entrega2.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExHeroi/ExHeroi.iml" filepath="$PROJECT_DIR$/ExHeroi/ExHeroi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IMC/IMC.iml" filepath="$PROJECT_DIR$/IMC/IMC.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Programação Orientada a Objetos.iml" filepath="$PROJECT_DIR$/.idea/Programação Orientada a Objetos.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloworld/helloworld.iml" filepath="$PROJECT_DIR$/helloworld/helloworld.iml" />
     </modules>
