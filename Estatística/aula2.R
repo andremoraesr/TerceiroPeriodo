@@ -43,3 +43,25 @@ while(acertos < 6) {         #quanto tempo para acertar x numeros
 
 semanas
 acertos
+
+#jogo da bet
+urna <- c("branca", rep("preta", times = 7), rep("vermelha", times = 7))
+
+dinheiro <- 100
+aposta <- "preta"
+
+saldo <- c()
+
+for(j in 1:200) {
+  dinheiro <- dinheiro - 10
+  sorteio <- sample(x = urna, size = 1)
+  if(sorteio == aposta) {
+    dinheiro <- dinheiro + 20
+  }
+  else {
+    dinheiro <- dinheiro
+  }
+  saldo <- c(saldo, dinheiro)
+}
+
+plot(x = 1:200, y = saldo, type = "l")
