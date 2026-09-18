@@ -1,0 +1,3 @@
+public enum TipoMovimentacao {
+        DEPOSITO, SAQUE, TRANSFERENCIA_RECEB, TRANSFERENCIA_ENV
+}

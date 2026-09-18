@@ -1,15 +1,36 @@
+import java.util.ArrayList;
+
 public class Conta {
-    String nome;
     double saldo;
     boolean especial;
+    Cliente cliente;
 
+    ArrayList<Movimentacoes> listaMovimentacoes;
+
+    public Conta() {
+        listaMovimentacoes = new ArrayList<>();
+    }
+
+    void movimentacaoRealizada(Movimentacoes m) {
+        listaMovimentacoes.add(m);
+    }
 
     void deposito (double valor) {
+        Movimentacoes m = new Movimentacoes();
+        m.movimentacao = TipoMovimentacao.DEPOSITO;
+        m.valor = valor;
+        this.movimentacaoRealizada(m);
+
         saldo = saldo + valor;
         System.out.println("\nDepósito realizado com sucesso!");
     }
 
     void retirada (double valor) {
+        Movimentacoes m = new Movimentacoes();
+        m.movimentacao = TipoMovimentacao.SAQUE;
+        m.valor = -valor;
+        this.movimentacaoRealizada(m);
+
         if (especial) {
             if(saldo >= valor) {
                 saldo = saldo - valor;
@@ -31,6 +52,16 @@ public class Conta {
     }
 
     void transferencia (double valor, Conta destino) {
+        Movimentacoes m = new Movimentacoes();
+        m.movimentacao = TipoMovimentacao.TRANSFERENCIA_RECEB;
+        m.valor = valor;
+        this.movimentacaoRealizada(m);
+
+        Movimentacoes n = new Movimentacoes();
+        m.movimentacao = TipoMovimentacao.TRANSFERENCIA_ENV;
+        m.valor = -valor;
+        destino.movimentacaoRealizada(m);
+
         if(especial) {
             if (this.saldo >= valor) {
                 this.saldo = this.saldo - valor;
@@ -54,8 +85,14 @@ public class Conta {
         }
     }
 
-    double getSaldo() {
-        return saldo;
+    public String formata() {
+        return "\n" + this.cliente.nome + " - Saldo: " + this.saldo + " - Especial: " + this.especial + ".";
+    }
+
+    String extrato() {
+        String resultado = "";
+        for(Movimentacoes m: listaMovimentacoes)
+            resultado += m.extrato();
+        return resultado;
     }
 }
-
