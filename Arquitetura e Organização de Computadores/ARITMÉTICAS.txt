@@ -1,0 +1,16 @@
+ARITMÉTICAS
+add         |  add $rd, $rs, $rt | rd <- rs + rt
+addi        |  addi $rt, $rs, cte | rt <- rs + cte
+mul         |  mul $rd, $rs, $rt | rd <- rs*rt
+slt         |  slt $rd, $rs, $rt | se rs < rt, rd <- 1 ; senão rd <- 0 | (set if less than)
+and	    |  and $rd, $rs, $rt | rd <- rs&rt
+andi	    | andi $rt, $rs, cte | rt <- rs&cte 
+
+__________________________________________________________________
+CONTROLE DE FLUXO
+beq         | beq $rs, $rt, label | se rs == rt, pc <- label
+
+__________________________________________________________________
+OUTRAS
+syscall 
+
