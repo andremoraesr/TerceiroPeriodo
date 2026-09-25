@@ -7,8 +7,11 @@ public class Conta {
 
     ArrayList<Movimentacoes> listaMovimentacoes;
 
-    public Conta() {
+    public Conta(double s, boolean e, Cliente c) {
         listaMovimentacoes = new ArrayList<>();
+        this.saldo = s;
+        this.especial = e;
+        this.cliente = c;
     }
 
     void movimentacaoRealizada(Movimentacoes m) {
@@ -16,7 +19,7 @@ public class Conta {
     }
 
     void deposito (double valor) {
-        Movimentacoes m = new Movimentacoes();
+        Movimentacoes m = new Movimentacoes(TipoMovimentacao.DEPOSITO, valor);
         m.movimentacao = TipoMovimentacao.DEPOSITO;
         m.valor = valor;
         this.movimentacaoRealizada(m);
@@ -26,7 +29,7 @@ public class Conta {
     }
 
     void retirada (double valor) {
-        Movimentacoes m = new Movimentacoes();
+        Movimentacoes m = new Movimentacoes(TipoMovimentacao.SAQUE, valor);
         m.movimentacao = TipoMovimentacao.SAQUE;
         m.valor = -valor;
         this.movimentacaoRealizada(m);
@@ -52,12 +55,12 @@ public class Conta {
     }
 
     void transferencia (double valor, Conta destino) {
-        Movimentacoes m = new Movimentacoes();
+        Movimentacoes m = new Movimentacoes(TipoMovimentacao.TRANSFERENCIA_RECEB, valor);
         m.movimentacao = TipoMovimentacao.TRANSFERENCIA_RECEB;
         m.valor = valor;
         this.movimentacaoRealizada(m);
 
-        Movimentacoes n = new Movimentacoes();
+        Movimentacoes n = new Movimentacoes(TipoMovimentacao.TRANSFERENCIA_ENV, valor);
         m.movimentacao = TipoMovimentacao.TRANSFERENCIA_ENV;
         m.valor = -valor;
         destino.movimentacaoRealizada(m);
@@ -74,9 +77,7 @@ public class Conta {
             }
         }
         else {
-            if(this.saldo < valor) {
-                System.out.println("\nSaldo insuficiente");
-            }
+            if(this.saldo < valor) {System.out.println("\nSaldo insuficiente");}
             else {
                 this.saldo = this.saldo - valor;
                 destino.saldo += valor;
