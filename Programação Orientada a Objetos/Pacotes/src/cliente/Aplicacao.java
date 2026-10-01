@@ -10,7 +10,7 @@ public class Aplicacao {
 
         int option;
         do {
-            System.out.println("___________MENU DA PLHA___________");
+            System.out.println("\n___________MENU DA PLHA___________");
             System.out.println("1. Inserir.");
             System.out.println("2. Remover.");
             System.out.println("3. Ver o elemento do topo.");
