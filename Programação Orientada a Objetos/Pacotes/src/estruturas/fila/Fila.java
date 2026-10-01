@@ -29,7 +29,7 @@ public class Fila {
 
     public void show() {
         for (Integer valor : fila) {
-            System.out.println(valor + "  ");
+            System.out.print(valor + "  ");
         }
     }
 }
