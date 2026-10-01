@@ -21,7 +21,7 @@ public class Aplicacao {
 
             switch (option) {
                 case 1: {
-                    System.out.println("Valor: ");
+                    System.out.print("Valor: ");
                     int x = input.nextInt();
                     p.adicionar(x);
                     break;
