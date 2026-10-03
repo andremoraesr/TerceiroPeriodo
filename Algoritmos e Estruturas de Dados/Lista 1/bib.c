@@ -29,3 +29,12 @@ void questao4 (int *vet, int tam, int x) {
         printf("%d ", vet[i]);
     }
 }
+
+int questao5(int *vet, int tam, int x) {
+    for(int i = 0; i<tam; i++) {
+        if(vet[i] == x) {
+            return i;
+        }
+    }
+    return 0;
+}

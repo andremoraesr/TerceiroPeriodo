@@ -22,7 +22,7 @@ int main () {
         setbuf(stdin, NULL);
         switch(option) {
             case 1:{
-
+                printf("\nUm exemplo de aplicação real para este caso é num site de vendas, onde há a opção de ordenar os produtos por ordem decrescente de preços, e para isso é preciso encontrar o menor valor.");
                 break;
             }
             case 2: {
@@ -45,19 +45,32 @@ int main () {
                 printf("\nCriar vetor... digite o tamanho: ");
                 int t;
                 scanf("%d", &t);
-                printf("\nDigite o elemento a ser inserido: ");
-                int x;
-                scanf("%d", &x);
                 int *v = (int*)malloc(1 + t*sizeof(int));
                 for(int i = 0; i < t; i++) {
                     printf("\nElemento %d: ", i);
                     scanf("%d", &v[i]);
                 }
-                questao2(v, t);
+                printf("\nDigite o elemento a ser encontrado: ");
+                int x;
+                scanf("%d", &x);
+                questao4(v, t, x);
                 free(v);
                 break;
             }
             case 5: {
+                printf("\nCriar vetor... digite o tamanho: ");
+                int t;
+                scanf("%d", &t);
+                int *v = (int*)malloc(1 + t*sizeof(int));
+                for(int i = 0; i < t; i++) {
+                    printf("\nElemento %d: ", i);
+                    scanf("%d", &v[i]);
+                }
+                printf("\nDigite o elemento a ser encontrado: ");
+                int x;
+                scanf("%d", &x);
+                questao5(v, t, x);
+                free(v);
                 break;
             }
             case 6: {
