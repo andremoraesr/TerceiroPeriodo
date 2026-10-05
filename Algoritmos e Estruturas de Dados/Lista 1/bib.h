@@ -2,8 +2,9 @@
 #define BIB_H
 
     void questao2 (int *vet, int tam);
-
+    void questao3(int vetor[], int n);
     void questao4 (int *vet, int tam, int x);
     int questao5 (int *vet, int tam, int x);
+    void questao8(struct pessoa arr[], int n, int campo);
 
 #endif
