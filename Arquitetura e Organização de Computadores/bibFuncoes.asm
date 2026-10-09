@@ -1,4 +1,5 @@
 #contém funcoes muito usadas
+.include "utlis.asm"
 
 .text
 #a0 - numero de elementos no array
@@ -6,6 +7,8 @@
 #DESC: retorna o maior elemento do array
 MAX:	
 		#(PASSO 3) salva o contexto
+		push_context
+
 #carrega o vetor na posicao 0 para s0 -- ma
 		lw	$s0, 0($a1)
 		addi $s7, $zero, 1	#s7 = i
@@ -28,5 +31,7 @@ SFORF1: #(PASSO 4) ATRIBUI VALOR DE RETORNO
 
 		add	$v0, $zero, $s0
 		#(PASSO 5) restaura o contexto
+		pop_context
+		
 		#(PASSO 6) retornar da função
 		jr	$ra
