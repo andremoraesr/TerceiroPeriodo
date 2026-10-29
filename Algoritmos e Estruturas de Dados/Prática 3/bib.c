@@ -57,3 +57,35 @@ void DFS(Grafo *g, int v, int visitado[]){
     }
 }
 
+void BFS(Grafo *g, int origem){               //origem é o vértice v de início
+    int fila[100];
+    int inicio = 0;
+    int fim = 0;
+    int visitado[100]={0};
+    fila[fim++] = origem;
+    visitado[origem] = 1;
+    while(inicio < fim){
+        int v = fila[inicio++];
+        printf("%d ",v);
+        No *aux = g->lista[v];
+        while(aux){
+        if(!visitado[aux->destino]){
+            visitado[aux->destino] = 1;
+            fila[fim++] = aux->destino;
+        }
+        aux = aux->prox;
+        }
+    }
+}
+
+void topoDFS(Grafo *g, int v, int visitado[], int pilha[], int *topo){             
+    visitado[v] = 1;
+    No *aux = g->lista[v];
+    while(aux){
+        if(!visitado[aux->destino ]){
+            topoDFS(g, aux->destino, visitado, pilha, topo);
+         }
+        aux = aux->prox;
+    }
+    pilha[(*topo)++] = v;
+}
