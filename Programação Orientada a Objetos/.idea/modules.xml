@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Corporativo/Corporativo.iml" filepath="$PROJECT_DIR$/Corporativo/Corporativo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Entrega2e3/Entrega2, 3.iml" filepath="$PROJECT_DIR$/Entrega2e3/Entrega2, 3.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExHeroi/ExHeroi.iml" filepath="$PROJECT_DIR$/ExHeroi/ExHeroi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expressoes/Expressoes.iml" filepath="$PROJECT_DIR$/Expressoes/Expressoes.iml" />
       <module fileurl="file://$PROJECT_DIR$/Heranca/Heranca.iml" filepath="$PROJECT_DIR$/Heranca/Heranca.iml" />
       <module fileurl="file://$PROJECT_DIR$/IMC/IMC.iml" filepath="$PROJECT_DIR$/IMC/IMC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Pacotes/Pacotes.iml" filepath="$PROJECT_DIR$/Pacotes/Pacotes.iml" />
