@@ -176,3 +176,43 @@ int buscaHash_EnderAberto(Hash* ha, int mat, struct aluno* al){
     }
     return 0;
 }
+
+#define DELETED ((struct aluno*) -1)
+int removeHash_EnderAberto(Hash* ha, int mat) {
+    if(ha == NULL) {
+        return 0;
+    }
+    int pos = chaveDivisao(mat, ha->TABLE_SIZE);
+    for(int i = 0; i<ha->TABLE_SIZE; i++) {
+        int newPos = sondagemLinear(pos, i, ha->TABLE_SIZE);
+
+        if(ha->itens[newPos] == NULL)
+            return 0;
+
+        if (ha->itens[newPos] != DELETED) {
+            if(ha->itens[newPos]->matricula == mat) {
+                free(ha->itens[newPos]);
+                ha->itens[newPos] = DELETED;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+void imprimeHash_EnderAberto(Hash *ha) {
+    if(ha == NULL) {
+        printf("\nHash nao inicializado.");
+        return;
+    }
+
+    printf("--- Conteúdo da Tabela Hash ---\n");
+    for(int i=0; i<ha->TABLE_SIZE-1; i++) {
+        if(ha->itens[i] != NULL && ha->itens[i] != DELETED) {
+            printf("\n%s, Matricula %d", ha->itens[i]->nome, ha->itens[i]->matricula);
+            printf("\nNotas: %.2f, %.2f, %.2f\n", ha->itens[i]->n1, ha->itens[i]->n2, ha->itens[i]->n3);
+        }
+    }
+
+    printf("\n-----------------------------\n");
+}
