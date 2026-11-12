@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AgendaGUI/AgendaGUI.iml" filepath="$PROJECT_DIR$/AgendaGUI/AgendaGUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/Corporativo/Corporativo.iml" filepath="$PROJECT_DIR$/Corporativo/Corporativo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Entrega2e3/Entrega2, 3.iml" filepath="$PROJECT_DIR$/Entrega2e3/Entrega2, 3.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExHeroi/ExHeroi.iml" filepath="$PROJECT_DIR$/ExHeroi/ExHeroi.iml" />
